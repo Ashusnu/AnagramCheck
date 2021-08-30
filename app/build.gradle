@@ -29,6 +29,7 @@ android {
 }
 
 dependencies {
+    androidTestImplementation 'androidx.test:rules:1.4.1-alpha01'
     def dagger_version                      = "2.38.1"
     def dagger_annotationProcessor_version  = "2.10"
 
