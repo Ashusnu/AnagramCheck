@@ -3,7 +3,6 @@ package com.ashish.patil.util;
 import android.animation.Animator;
 import android.app.Activity;
 import android.content.Context;
-import android.os.Build;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.inputmethod.InputMethodManager;
@@ -11,10 +10,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.ashish.patil.R;
 
 import androidx.core.content.ContextCompat;
-import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.OnLifecycleEvent;
-import androidx.lifecycle.ProcessLifecycleOwner;
 
 public class Util implements LifecycleObserver {
 
