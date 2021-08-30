@@ -6,8 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_100"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title_txt"
         style="@style/PageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,34 +28,60 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etFirstWordInput"
-        style="@style/FormInputField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:hint="@string/type_here"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/etSecondWordInput"
-        style="@style/FormInputField"
-        android:layout_width="0dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etFirstWordInput"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="@string/first_hint"
+        android:nextFocusDown="@id/etSecondWordInput"
+        app:endIconCheckable="true"
+        app:endIconDrawable="@drawable/ic_baseline_red_cross_24"
+        app:endIconMode="clear_text"
+        app:hintAnimationEnabled="false"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFirstWordInput" />
+        app:layout_constraintTop_toBottomOf="@+id/title_txt">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/FormInputField"
+            android:inputType="textShortMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etSecondWordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/second_hint"
+        app:endIconCheckable="true"
+        app:endIconDrawable="@drawable/ic_baseline_red_cross_24"
+        app:endIconMode="clear_text"
+        app:hintAnimationEnabled="false"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFirstWordInput">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/FormInputField"
+            android:inputType="textShortMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
         android:id="@+id/btn_validate"
@@ -59,13 +96,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etSecondWordInput" />
 
+    <ImageView
+        android:id="@+id/img_result"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result" />
+
     <TextView
-        android:id="@+id/output"
-        android:layout_width="0dp"
+        android:id="@+id/tv_result"
+        style="@style/GreenStyle"
+        android:visibility="gone"
+        android:background="@drawable/result_success_bg"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_validate" />

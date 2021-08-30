@@ -1,11 +1,23 @@
 package com.ashish.patil.util;
 
+import android.animation.Animator;
 import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 
-public class Util {
+import com.ashish.patil.R;
+
+import androidx.core.content.ContextCompat;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.ProcessLifecycleOwner;
+
+public class Util implements LifecycleObserver {
+
 
     public static void hideSoftKeyBoard(Activity activity) {
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
@@ -17,4 +29,22 @@ public class Util {
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
+
+
+
+    public static void runAnimation(View view, boolean isAnagram, Context context) {
+        if (isAnagram)
+            view.setBackgroundColor(ContextCompat.getColor(context, R.color.teal_100));
+        else
+            view.setBackgroundColor(ContextCompat.getColor(context, R.color.deep_orange));
+
+        int cx = view.getWidth() / 2;
+        int cy = view.getHeight() / 2;
+        float finalRadius = (float) Math.hypot(cx, cy);
+        Animator animator = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0f, finalRadius);
+        animator.setDuration(1000);
+        view.setVisibility(View.VISIBLE);
+        animator.start();
+    }
+
 }

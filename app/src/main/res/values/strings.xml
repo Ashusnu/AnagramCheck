@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">AshishP Anagram</string>
-    <string name="check_if_its_anagram_pair">Check if its an\nAnagram Pair..!</string>
+    <string name="check_if_its_anagram_pair">Check Anagram..!</string>
     <string name="validate_if_anagrams">Validate if anagrams</string>
     <string name="input_required">Input Required</string>
-    <string name="type_here">type here..</string>
-    <string name="anagram_true">Anagram pair.!!</string>
-    <string name="anagram_false">Not Anagrams!</string>
+    <string name="first_hint">type here! example. (Rat)</string>
+    <string name="second_hint">type here! example. (Tar)</string>
+    <string name="anagram_false">Its not an Anagrams..!</string>
+    <string name="its_an_anagram">Its an anagram..!</string>
 </resources>

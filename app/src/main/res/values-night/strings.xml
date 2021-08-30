@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="check_if_its_anagram_pair">Check if its an\nAnagram Pair..!</string>
+    <string name="app_name">AshishP Anagram</string>
+    <string name="check_if_its_anagram_pair">Check Anagram..!</string>
     <string name="validate_if_anagrams">Validate if anagrams</string>
     <string name="input_required">Input Required</string>
     <string name="type_here">type here..</string>
-    <string name="anagram_true">These words are anagrams!</string>
-    <string name="anagram_false">These words are not anagrams!</string>
+    <string name="anagram_false">Its not an Anagrams..!</string>
+    <string name="its_an_anagram">Its an anagram..!</string>
 </resources>
