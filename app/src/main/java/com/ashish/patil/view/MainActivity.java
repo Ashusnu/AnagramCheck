@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleResult(AnagramValidationResponse anagramValidationResponse) {
         if (anagramValidationResponse.getError() != null) {
-            switch (anagramValidationResponse.getError().getInput_type()) {
+            switch (anagramValidationResponse.getError().inputType) {
                 case FIRST:
                     inputFirstWord.setError(getString(R.string.input_required));
                     validateButton.setVisibility(View.VISIBLE);
