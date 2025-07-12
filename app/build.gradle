@@ -36,13 +36,15 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.4.1-alpha01'
     def dagger_version                      = "2.38.1"
     def dagger_annotationProcessor_version  = "2.10"
+    def core_ktx_version                    = "1.6.0"
+    def kotlin_stdlib_version               = "1.5.30"
 
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.30'
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_stdlib_version"
 
     /* Dagger - default dependency */
     implementation "com.google.dagger:dagger:$dagger_version"
